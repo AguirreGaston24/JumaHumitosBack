@@ -1,47 +1,44 @@
-import { IsBoolean, IsOptional, IsString, IsNumber } from 'class-validator';
+// update-productos.dto.ts
+import { IsOptional, IsNumber, IsString, IsBoolean } from 'class-validator';
 
 export class UpdateProductosDto {
-  // Validación opcional para asegurarse de que el código es un número
+  // Campo opcional para contar ventas, debe ser un número
   @IsOptional()
   @IsNumber()
-  code?: Number;
+  salesCount?: number;  // Usa 'number' en lugar de 'Number'
 
-  // Validación opcional para el tipo de producto, asegurando que es una cadena de texto
+  // Campo opcional para el tipo de producto, debe ser una cadena de texto
   @IsOptional()
   @IsString()
-  type?: string;
+  type?: string;  // Opcional y debe ser una cadena de texto
 
-  // Validación opcional para el stock, asegurando que es un booleano
+  // Campo opcional para la marca del producto, debe ser una cadena de texto
+  @IsOptional()
+  @IsString()
+  brand?: string;  // Opcional y debe ser una cadena de texto
+
+  // Campo opcional para la línea del producto, debe ser una cadena de texto
+  @IsOptional()
+  @IsString()
+  line?: string;  // Opcional y debe ser una cadena de texto
+
+  // Campo opcional para el aroma del producto, debe ser una cadena de texto
+  @IsOptional()
+  @IsString()
+  scent?: string;  // Opcional y debe ser una cadena de texto
+
+  // Campo opcional para el estado del stock, debe ser un booleano
   @IsOptional()
   @IsBoolean()
-  stock?: boolean;
+  stock?: boolean;  // Opcional y debe ser un booleano
 
+  // Campo opcional para el precio del producto, debe ser un número
+  @IsOptional()
+  @IsNumber()
+  price?: number;  // Opcional y debe ser un número
 
-    @IsString()
-    @IsOptional()
-    description: string;
-  
-    @IsNumber()
-    @IsOptional()
-    duration: Number;
-  
-    @IsString()
-    @IsOptional()
-    amount: string;
-  
-  
-    @IsString()
-    @IsOptional()
-    brand: string;
-  
-  
-    @IsString()
-    @IsOptional()
-    line: string;
-  
-    @IsString()
-    @IsOptional()
-    scent: string;
-  
+  // Campo opcional para la cantidad disponible del producto, debe ser un número
+  @IsOptional()
+  @IsNumber()
+  available?: number;  // Opcional y debe ser un número
 }
-

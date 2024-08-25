@@ -6,10 +6,12 @@ import { Productos, productosSchema } from 'src/productos/schemas/productos.sche
 
 @Module({
   imports: [
-    // Configuración de Mongoose para la colección de productos
+    // Configura Mongoose para conectar con la base de datos y definir el esquema de la colección de productos
     MongooseModule.forFeature([{ name: Productos.name, schema: productosSchema }]),
   ],
+  // Define los controladores que gestionarán las solicitudes HTTP para este módulo
   controllers: [ProductosController],
+  // Define los servicios que proporcionarán la lógica de negocio para este módulo
   providers: [ProductosService],
 })
 export class ProductosModule {}

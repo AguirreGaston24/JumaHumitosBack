@@ -1,44 +1,53 @@
 import { IsBoolean, IsNotEmpty, IsOptional, IsString, IsNumber } from 'class-validator';
 
 export class CreateProductosDto {
-  // Validación para asegurarse de que el código es un número y no está vacío
+  // Valida que 'code' sea un número y no esté vacío
   @IsNumber()
   @IsNotEmpty()
-  code: Number;
+  code: number;  // Usa 'number' en lugar de 'Number' para una mejor coherencia en TypeScript
 
-  // Validación opcional para el tipo de producto, asegurando que es una cadena de texto
+  // Valida que 'type' sea una cadena de texto opcional
   @IsString()
   @IsOptional()
-  type?: string;
+  type?: string;  // El signo de interrogación indica que este campo es opcional
 
-  // Validación opcional para el stock, asegurando que es un booleano
+  // Valida que 'stock' sea un valor booleano opcional
   @IsBoolean()
   @IsOptional()
-  stock?: boolean;
+  stock?: boolean;  // También opcional y de tipo booleano
 
+  // Valida que 'description' sea una cadena de texto opcional
   @IsString()
   @IsOptional()
-  description: string;
+  description?: string;  // Añadir signo de interrogación para marcarlo como opcional
 
+  // Valida que 'duration' sea un número y no esté vacío
   @IsNumber()
   @IsNotEmpty()
-  duration: Number;
+  duration: number;  // Usa 'number' en lugar de 'Number'
 
+  // Valida que 'amount' sea una cadena de texto opcional
   @IsString()
   @IsOptional()
-  amount: string;
+  amount?: string;  // Añadir signo de interrogación para marcarlo como opcional
 
-
+  // Valida que 'brand' sea una cadena de texto opcional
   @IsString()
   @IsOptional()
-  brand: string;
+  brand?: string;  // Añadir signo de interrogación para marcarlo como opcional
 
-
+  // Valida que 'line' sea una cadena de texto opcional
   @IsString()
   @IsOptional()
-  line: string;
+  line?: string;  // Añadir signo de interrogación para marcarlo como opcional
 
+  // Valida que 'scent' sea una cadena de texto opcional
   @IsString()
   @IsOptional()
-  scent: string;
+  scent?: string;  // Añadir signo de interrogación para marcarlo como opcional
+
+  // Valida que 'available' sea un número y no esté vacío
+  @IsNumber()
+  @IsNotEmpty()
+  available: number;  // Usa 'number' en lugar de 'Number'
 }
